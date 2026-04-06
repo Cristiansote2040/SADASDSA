@@ -1,0 +1,129 @@
+/* ================= DASHBOARD ================= */
+.dashboard {
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: #fff;
+  min-height: 100vh;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* ================= FILTROS ================= */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  background: #1e293b;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filters button:hover {
+  background: #334155;
+}
+
+.filters .active {
+  background: #3b82f6;
+}
+
+/* ================= CARDS ================= */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.card {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(8px);
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+}
+
+.card h3 {
+  color: #94a3b8;
+}
+
+.card p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+/* ================= GRÁFICOS ================= */
+.charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.chart-box {
+  background: rgba(30, 41, 59, 0.8);
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  width: 100% !important; /* fuerza que no se salga */
+  min-width: 0; /* evita overflow */
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 16px;
+  }
+
+  /* FILTROS */
+  .filters {
+    flex-direction: column; /* vertical en móvil */
+    gap: 12px;
+    margin-bottom: 15px;
+  }
+
+  .filters button {
+    width: 100%; /* botones más grandes para tocar */
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+
+  /* CARDS */
+  .cards {
+    grid-template-columns: 1fr; /* una columna en móvil */
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 1.5rem;
+  }
+
+  /* GRÁFICOS */
+  .charts {
+    grid-template-columns: 1fr; /* una columna en móvil */
+    gap: 16px;
+  }
+
+  .chart-box {
+    width: 100% !important; /* ocupa todo el ancho del contenedor */
+    min-width: 0;
+    padding: 16px;
+    overflow-x: auto; /* scroll si algo rompe */
+  }
+}

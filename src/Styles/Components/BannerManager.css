@@ -1,0 +1,28 @@
+.banner-wrapper {
+  position: relative;      /* clave: para que los overlays queden dentro */
+  width: 100%;
+  height: 100%;            /* o fija según getHeight */
+  overflow: hidden;        /* opcional: para que no se escape nada */
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(48, 48, 48, 0);
+  pointer-events: none;    /* no bloquea clicks */
+}
+
+.banner-draggable-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-draggable-element {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: move;
+  text-align: center;
+  width: 100%;
+  word-break: break-word;
+}

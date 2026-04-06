@@ -1,0 +1,100 @@
+.admin-users-full-container {
+  padding: 25px;
+  min-height: 100vh;
+  background: #1c1c1c;
+  color: #fff;
+}
+
+.admin-users-full-title {
+  color: #ffba08;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.admin-users-search {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+.admin-users-table-container {
+  overflow-x: auto;
+}
+
+.admin-users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-users-table th,
+.admin-users-table td {
+  padding: 12px;
+  text-align: left;
+}
+
+.admin-users-table th {
+  background: #222;
+  color: #ffba08;
+}
+
+.admin-users-table tr {
+  border-bottom: 1px solid #333;
+}
+
+.admin-users-table tr:hover {
+  background: rgba(255, 186, 8, 0.1);
+}
+
+.admin-users-input-name {
+  background: #2d2d2d;
+  border: 1px solid #444;
+  padding: 6px;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.admin-users-select-role {
+  background: #2d2d2d;
+  border: 1px solid #444;
+  padding: 6px;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.admin-users-status.verified {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.admin-users-status.not-verified {
+  color: #f44336;
+  font-weight: bold;
+}
+
+.admin-users-btn-delete {
+  background: #f44336;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.admin-users-btn-delete:hover {
+  background: #ff6e60;
+}
+
+.admin-users-btn-delete:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+.admin-users-empty {
+  margin-top: 20px;
+  color: #ccc;
+  text-align: center;
+}

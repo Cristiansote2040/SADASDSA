@@ -1,0 +1,115 @@
+/* ================= ADMIN LAYOUT ================= */
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+}
+
+/* ================= SIDEBAR ================= */
+.admin-sidebar {
+  width: 250px;
+  background: #181818;
+  color: white;
+  padding: 20px;
+  flex-shrink: 0;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.admin-sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffba08;
+}
+
+.admin-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-sidebar li {
+  margin-bottom: 12px;
+}
+
+.admin-sidebar a {
+  color: #ffba08;
+  text-decoration: none;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.admin-sidebar a:hover {
+  background: rgba(255, 186, 8, 0.15);
+  color: #fff;
+}
+
+/* ================= CONTENIDO ================= */
+.admin-content {
+  flex: 1;
+  padding: 20px;
+  background: #222222;
+  color: white;
+  min-height: 100vh;
+}
+
+/* ================= MOBILE ================= */
+.mobile-sidebar-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .admin-container {
+    flex-direction: column;
+  }
+
+  .mobile-sidebar-toggle {
+    display: block;
+    position: fixed;
+    z-index: 1001;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #ff5400, #ffba08);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-sidebar-toggle:hover {
+    transform: scale(1.05);
+  }
+
+  .admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: 1000;
+    border-radius: 0;
+  }
+
+  .admin-sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* Overlay */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+  }
+
+  .admin-content {
+    padding: 16px;
+    border-radius: 0;
+  }
+}

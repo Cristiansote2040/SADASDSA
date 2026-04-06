@@ -1,0 +1,119 @@
+.admin-orders-new-container {
+  padding: 25px;
+  min-height: 100vh;
+  background: #1c1c1c;
+  color: #fff;
+}
+
+.admin-orders-new-title {
+  color: #ffba08;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.admin-orders-new-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.admin-order-card {
+  background: #2d2d2d;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.admin-order-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.7);
+}
+
+.admin-order-header span {
+  display: inline-block;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.admin-order-details p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+}
+
+.admin-order-items {
+  margin-top: 8px;
+  padding-left: 10px;
+  border-left: 2px solid #ffba08;
+}
+
+.admin-order-actions {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-order-select {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  background: #444;
+  color: #fff;
+  font-weight: bold;
+}
+
+.admin-order-select:hover {
+  background: #555;
+}
+
+.btn-admin-order-confirm {
+  padding: 6px 14px;
+  background: #ff5400;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-admin-order-confirm:hover {
+  background: #ff6e34;
+}
+
+.admin-orders-new-empty {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .admin-orders-new-container {
+    padding: 16px;
+  }
+
+  .admin-orders-new-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+
+  .admin-orders-new-grid {
+    grid-template-columns: 1fr; /* 1 columna en móvil */
+    gap: 15px;
+  }
+
+  .admin-order-card {
+    padding: 16px;
+  }
+
+  .admin-order-actions {
+    flex-direction: column; /* acciones apiladas */
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .admin-order-select,
+  .btn-admin-order-confirm {
+    width: 100%; /* botones full width en móvil */
+  }
+}

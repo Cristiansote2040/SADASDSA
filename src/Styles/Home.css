@@ -1,0 +1,81 @@
+/* ================= Home Promotions Section ================= */
+.hp-promotions {
+  position: relative;
+  padding: 60px 20px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fef9f4, #ffe6d6);
+  text-align: center;
+}
+
+.hp-promotions__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff6f61;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.hp-promotions__intro {
+  font-size: 1rem;
+  color: #444;
+  max-width: 650px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+  animation: hp-promotions-fadeInUp 1.2s ease forwards;
+  opacity: 0;
+}
+
+/* Animación de entrada */
+@keyframes hp-promotions-fadeInUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Blobs animados detrás */
+.hp-promotions::before,
+.hp-promotions::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.3;
+  animation: hp-promotions-float 12s ease-in-out infinite;
+  z-index: 1;
+}
+
+.hp-promotions::before {
+  width: 300px;
+  height: 300px;
+  background: #ffba08;
+  top: -100px;
+  left: -50px;
+}
+
+.hp-promotions::after {
+  width: 400px;
+  height: 400px;
+  background: #ff5400;
+  bottom: -150px;
+  right: -100px;
+  animation-duration: 15s;
+}
+
+/* Lista de cards centradas */
+.hp-promotions__list {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  z-index: 2;
+}
+
+/* Animación flotante de blobs */
+@keyframes hp-promotions-float {
+  0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+  50% { transform: translateY(20px) translateX(15px) rotate(45deg); }
+}

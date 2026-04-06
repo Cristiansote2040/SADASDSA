@@ -1,0 +1,132 @@
+/* ================= PRODUCT CARD ================= */
+.product-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ffffff; /* blanco vivo */
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0; /* borde suave para separar del fondo */
+}
+
+/* HOVER 🔥 */
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); /* sombra más suave y juvenil */
+}
+
+/* LINK */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* ================= IMAGE ================= */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background: #f9f9f9; /* un gris muy suave para contraste */
+  overflow: hidden;
+  border-bottom: 1px solid #eee; /* línea sutil que divide imagen de info */
+}
+
+/* IMAGEN */
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* ZOOM HOVER */
+.product-card:hover img {
+  transform: scale(1.08);
+}
+
+/* ================= BADGES ================= */
+
+/* 🔴 SIN STOCK */
+.badge-stock {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff4c4c; /* rojo vibrante pero no agresivo */
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 5px 8px;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+/* 💸 AHORRO / PROMO */
+.badge-save {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: linear-gradient(135deg, #ff5400, #ffba08); /* naranja a amarillo vivo */
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1); /* agrega profundidad */
+}
+
+/* ================= INFO ================= */
+.card-info {
+  padding: 12px;
+}
+
+/* NOMBRE */
+.card-info h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222; /* contraste fuerte con fondo blanco */
+  margin: 0 0 8px 0;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ================= PRECIOS ================= */
+
+/* CONTENEDOR */
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* PRECIO PROMO 🔥 */
+.promo-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff5400; /* naranja vivo */
+}
+
+/* PRECIO ORIGINAL tachado */
+.original-price {
+  font-size: 13px;
+  color: #888888;
+  text-decoration: line-through;
+}
+
+/* PRECIO NORMAL */
+.normal-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222222;
+}
+
+/* ================= SIN STOCK EFECTO ================= */
+.product-card.no-stock {
+  opacity: 0.75;
+}
+
+.product-card.no-stock img {
+  filter: grayscale(30%);
+}

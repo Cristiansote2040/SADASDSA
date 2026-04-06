@@ -1,0 +1,345 @@
+/* ================= LAYOUT GENERAL ================= */
+.products-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #121212; /* fondo oscuro elegante */
+  color: #e0e0e0;
+  font-family: 'Inter', sans-serif;
+}
+.show-filters-btn{
+  display: none;
+}
+/* ================= SIDEBAR ================= */
+.filters-sidebar {
+  width: 260px;
+  background: #1f1f1f; /* más vivo que negro */
+  padding: 20px;
+  border-right: 1px solid #2c2c2c;
+  color: #fff;
+}
+
+.filters-sidebar h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* SECCIONES DE FILTROS */
+.filter-section:last-child {
+  margin-bottom: 20px;
+}
+
+/* SUBTÍTULOS */
+.filter-section h4 {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+/* INPUTS */
+.filters-sidebar input {
+  width: 100%;
+  padding: 8px;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: #fff;
+  margin-top: 5px;
+}
+
+/* ================= DESPLEGABLES ================= */
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 6px 0;
+}
+
+.categories {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.2s ease;
+}
+
+.categories.open {
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* BOTONES DE FILTROS */
+.categories button {
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 6px;
+  border-radius: 6px;
+  color: #ccc;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.categories button:hover {
+  background: #2c2c2c;
+  color: #fff;
+}
+
+.categories button.active {
+  background: #ff5400; /* naranja activo por defecto */
+  color: #fff;
+}
+
+/* ================= OFERTAS ================= */
+.promo-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #ff5400; /* naranja por defecto */
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+/* CAMBIA SOLO CUANDO ESTÁ ACTIVO */
+.promo-btn.active {
+  background-color: #1e88e5; /* azul vivo al tocar */
+}
+
+/* Hover normal no cambia nada */
+.promo-btn:hover:not(.active) {
+  background-color: #ff5400;
+}
+
+/* BOTÓN APLICAR FILTROS */
+.apply-btn {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  background: linear-gradient(135deg, #ff5400, #ffba08);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.apply-btn:hover {
+  transform: scale(1.03);
+}
+
+/* ================= PRODUCTOS ================= */
+.products-content {
+  flex: 1;
+  padding: 20px;
+  /* Fondo blanco vivo y moderno */
+  background: linear-gradient(135deg, #fffafa, #fefefe);
+  min-height: 100vh;
+}
+
+/* INFO DE RESULTADOS */
+.results-info {
+  margin-bottom: 15px;
+  color: #ccc;
+  font-size: 14px;
+}
+
+/* GRID DE PRODUCTOS */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* TARJETA PRODUCTO */
+
+
+/* ================= BADGES ================= */
+.badge-discount {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #111;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 8px;
+  z-index: 3;
+}
+
+.badge-save {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: linear-gradient(135deg, #ff5400, #ffba08);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.badge-stock {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 5px 8px;
+  border-radius: 6px;
+  z-index: 4;
+}
+
+/* ================= PAGINACIÓN ================= */
+.pagination {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pagination button {
+  min-width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  border: none;
+  background: #1f1f1f;
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #2c2c2c;
+  color: #fff;
+}
+
+.pagination button.active {
+  background: linear-gradient(135deg, #ff5400, #ffba08);
+  color: #fff;
+  font-weight: bold;
+}
+
+.pagination button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+/* Layout Desktop */
+.products-layout {
+  display: flex;
+  gap: 24px;
+  padding: 16px;
+}
+
+/* Sidebar fijo a la izquierda */
+.filters-sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .products-layout {
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px;
+  }
+
+  /* BOTÓN GLOBAL SHOW/HIDE FILTERS */
+  .show-filters-btn {
+    display: block;
+    margin: 0 auto 12px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #ff5400, #ffba08);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .show-filters-btn:hover {
+    transform: scale(1.05);
+  }
+
+  /* SIDEBAR COMO PANEL FLOTANTE */
+  .filters-sidebar {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    order: -1; /* aparece arriba de los productos */
+    background: #1f1f1f;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    opacity: 0;
+  }
+
+  /* Cuando toggle está activo */
+  .filters-sidebar.open {
+    max-height: 1000px; /* suficiente para todo el contenido */
+    opacity: 1;
+  }
+
+  /* Secciones y headers */
+  .filter-section {
+    margin-bottom: 14px;
+  }
+
+  .filter-header {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: 600;
+    border-bottom: 1px solid #333;
+    padding: 8px 0;
+  }
+
+  .categories {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 8px;
+  }
+
+  .categories.open {
+    display: flex;
+  }
+
+  /* Inputs y botones grandes para tocar */
+  input[type="number"], .categories button, .promo-btn, .apply-btn {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+
+  /* PRODUCT LIST GRID ADAPTABLE */
+  .product-list {
+    grid-template-columns: repeat(2fr,1fr);
+    gap: 16px;
+  }
+  /* PAGINACIÓN MÁS ACCESIBLE */
+  .pagination button {
+    min-width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+}

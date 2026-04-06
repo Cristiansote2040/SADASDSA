@@ -1,0 +1,162 @@
+/* Contenedor principal */
+.admin-promotions-container {
+  max-width: 950px;
+  margin: 30px auto;
+  padding: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #e0e0e0; /* texto claro sobre fondo oscuro */
+  background-color: #1f1f1f; /* gris oscuro / casi negro */
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+}
+
+/* Título principal */
+.admin-promotions-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #ff6600; /* naranja vibrante */
+}
+
+/* FORMULARIO */
+.admin-promo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #2a2a2a; /* fondo más claro que el container */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+
+/* Inputs, textarea y select */
+.admin-promo-input,
+.admin-promo-textarea,
+.admin-promo-select,
+.admin-promo-multiselect {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #333;
+  color: #e0e0e0;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.admin-promo-input:focus,
+.admin-promo-textarea:focus,
+.admin-promo-select:focus,
+.admin-promo-multiselect:focus {
+  border-color: #ff6600; /* naranja */
+  box-shadow: 0 0 6px rgba(255,102,0,0.5);
+  outline: none;
+  background-color: #3a3a3a;
+}
+
+.admin-promo-textarea {
+  resize: vertical;
+  min-height: 50px;
+}
+
+.admin-promo-label {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #e0e0e0;
+}
+
+/* Botón crear/actualizar */
+.admin-promo-button {
+  padding: 12px 22px;
+  background-color: #ff6600; /* naranja vibrante */
+  color: #1f1f1f; /* texto oscuro sobre naranja */
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.admin-promo-button:hover {
+  background-color: #e55b00;
+  transform: translateY(-1px);
+}
+
+/* LISTADO PROMOCIONES */
+.admin-promo-list {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Cada tarjeta de promo */
+.admin-promo-card {
+  border-radius: 10px;
+  padding: 16px 20px;
+  background-color: #2a2a2a; /* tarjeta un poco más clara que fondo container */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.admin-promo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.7);
+}
+
+.admin-promo-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #ff6600; /* título naranja */
+}
+
+.admin-promo-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #ccc; /* gris claro para texto */
+}
+
+/* Botones de cada tarjeta */
+.admin-promo-edit-btn,
+.admin-promo-delete-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  margin-top: 8px;
+  margin-right: 6px;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.admin-promo-edit-btn {
+  background-color: #ff9900; /* naranja más claro */
+  color: #1f1f1f;
+}
+
+.admin-promo-edit-btn:hover {
+  background-color: #e68a00;
+  transform: translateY(-1px);
+}
+
+.admin-promo-delete-btn {
+  background-color: #cc3300; /* rojo oscuro */
+  color: #fff;
+}
+
+.admin-promo-delete-btn:hover {
+  background-color: #a82800;
+  transform: translateY(-1px);
+}
+
+/* Select múltiple un poco más alto */
+.admin-promo-multiselect {
+  height: 130px;
+}
