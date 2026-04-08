@@ -11,16 +11,24 @@ export default function CategoriesMinimalFinal() {
 
   useEffect(() => {
     const fetchCategories = async () => {
-      try {
-        const res = await getCategories();
-        setCategories(res.data);
-      } catch (error) {
-        console.error("Error al traer categorías:", error);
-      } finally {
-        setLoading(false);
+      let retries = 3;
+
+      while (retries > 0) {
+        try {
+          const res = await getCategories();
+          setCategories(res.data);
+          return; // si funciona, salimos
+        } catch (error) {
+          retries--;
+          console.log("Retry... quedan:", retries);
+          await new Promise((r) => setTimeout(r, 3000));
+        }
       }
+
+      console.error("Error final al traer categorías");
     };
-    fetchCategories();
+
+    fetchCategories().finally(() => setLoading(false));
   }, []);
 
   if (loading) return <p className="loadingText">Cargando categorías…</p>;
@@ -34,8 +42,8 @@ export default function CategoriesMinimalFinal() {
     >
       <h2 className="minimalTitleFinal">Estas son nuestras categorías</h2>
       <p className="minimalDescFinal">
-        Descubrí todos nuestros productos organizados por categorías.  
-        Hacé clic en la que más te interese para explorar los productos.
+        Descubrí todos nuestros productos organizados por categorías. Hacé clic
+        en la que más te interese para explorar los productos.
       </p>
 
       <div className="minimalListFinal">

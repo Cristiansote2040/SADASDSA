@@ -20,22 +20,37 @@ export default function Home() {
   
 
   useEffect(() => {
-    const fetchData = async () => {
+  const fetchWithRetry = async (fn, retries = 3) => {
+    while (retries > 0) {
       try {
-        const promotionsRes = await getPromotions();
-        const productsRes = await getProducts({ isActive: true });
-
-        setPromotions(promotionsRes.data);
-        setProducts(productsRes.data.products);
+        return await fn();
       } catch (err) {
-        setError("No se pudieron cargar los productos o promociones"); // 🔹 Mensaje de error
-      } finally {
-        setLoading(false);
+        retries--;
+        console.log("Retry... quedan:", retries);
+        await new Promise((r) => setTimeout(r, 3000));
       }
-    };
+    }
+    throw new Error("Falló después de varios intentos");
+  };
 
-    fetchData();
-  }, []);
+  const fetchData = async () => {
+    try {
+      const [promotionsRes, productsRes] = await Promise.all([
+        fetchWithRetry(() => getPromotions()),
+        fetchWithRetry(() => getProducts({ isActive: true })),
+      ]);
+
+      setPromotions(promotionsRes.data);
+      setProducts(productsRes.data.products);
+    } catch (err) {
+      setError("El servidor está iniciando, intentá en unos segundos 👀");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchData();
+}, []);
   // 🔹 Top selling (más vendidos)
   const topSelling = [...products]
     .filter((p) => (p.variants || []).some((v) => v.stock > 0))

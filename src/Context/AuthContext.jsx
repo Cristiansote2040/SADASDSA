@@ -11,22 +11,24 @@ export const AuthProvider = ({ children }) => {
   const [message, setMessage] = useState(null); // mensajes de login, registro, logout
 
   // 🔹 Cargar usuario al iniciar la app
-  useEffect(() => {
-    const loadUser = async () => {
-      try {
-        const res = await getProfile();
-        // 🔹 Solo setear user si hay datos reales
-        setUser(res.data?._id ? res.data : null);
-      } catch (err) {
-        setUser(null);
-      } finally {
-        setLoading(false);
+ useEffect(() => {
+  const loadUser = async (retries = 3) => {
+    try {
+      const res = await getProfile();
+      setUser(res.data?._id ? res.data : null);
+    } catch (err) {
+      if (retries > 0) {
+        await new Promise((r) => setTimeout(r, 3000));
+        return loadUser(retries - 1);
       }
-    };
+      setUser(null);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    loadUser();
-  }, []);
-
+  loadUser();
+}, []);
   // 🔹 Login
   const login = async (email, password) => {
     try {
